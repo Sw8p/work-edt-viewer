@@ -15,15 +15,18 @@ export class Header extends React.Component {
   };
 
   render() {
-    const { questionIndex, questionCount } = this.props
+    const { questionIndex, questionCount, label } = this.props;
+    const questionProgression = (questionIndex + 1) / questionCount * 100;
+
     return (
       <div className="viewer__interaction__header">
         <p className="viewer__interaction__header__number">
-            Question n° <strong>37/200</strong> :
+            Question n° <strong>
+              {questionIndex + 1}/{questionCount}
+            </strong> :
           </p>
           <h2>
-              À quelle(s) répercution(s) peut-on être
-              confronté si on s’arrête dans cette rue ?
+              {label}
           </h2>
           <div className="viewer__interaction__header__time">
             <span className="viewer__interaction__header__time__bubble">

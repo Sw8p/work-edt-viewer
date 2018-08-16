@@ -1,0 +1,58 @@
+.signSort {
+  margin-bottom: auto;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.signSort__answer {
+  padding: 1.5rem;
+  border: 2px var(--soft-mood) solid;
+  border-radius: 1rem;
+  margin: 0.5rem;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.signSort__answer:hover {
+  background-color: var(--softer-mood);
+  transition: 1s;
+  transition-timing-function: cubic-bezier(0, 0.5, 0, 1);
+}
+
+.signSort__answer:active {
+  background-color: var(--soft-mood);
+  transition: 0.1s;
+  transition-timing-function: cubic-bezier(0, 0.5, 0, 1);
+}
+
+.signSort__answer__button {
+  height: 2rem;
+  width: 2rem;
+  background-color: var(--soft-mood);
+  box-shadow: var(--soft-mood) 0 0.6rem 0 0 inset;
+  border-radius: 0.4rem;
+}
+
+.signSort__answer--selected {
+  background-color: var(--soft-mood);
+}
+
+.signSort__answer--selected .signSort__answer__button {
+  background-image: url(../assets/checked.svg);
+  box-shadow: none;
+}
+
+.signSort__answer__sign {
+  width: 10rem;
+  height: 10rem;
+  /*background-image: url(../assets/sign.png);*/
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 1.5rem;
+}

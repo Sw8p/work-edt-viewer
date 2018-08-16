@@ -3,13 +3,16 @@ import React, { Component } from 'react';
 import { MediaRenderer } from './components/MediaRenderer'
 import { InteractiveArea } from './components/InteractiveArea'
 
+import selectors from './selectors'
+
 import './viewer.css'
 
 class Viewer extends Component {
   state = {
     remainingSeconds: this.props.exam.duration,
-    questionIndex: 0
+    questionIndex: 4
   }
+
 
   //Timer & check
   componentDidMount() {
@@ -56,13 +59,16 @@ class Viewer extends Component {
   render() {
     const { exam } = this.props;
     const { questionIndex } = this.state;
-    const currentQuestion = questionIndex;
-
+    const currentQuestion = selectors.getQuestionContent(this.props, questionIndex);
+    let mediaRenderer;
+    if(currentQuestion.media){
+      mediaRenderer = <MediaRenderer
+          media={currentQuestion.media}
+      />
+    }
     return (
       <div className="viewer">
-          <MediaRenderer
-              src={exam.content.media}
-          />
+          {mediaRenderer}
           <InteractiveArea
               question={currentQuestion}
               validateAnswer={this.handleValidateAnswer}

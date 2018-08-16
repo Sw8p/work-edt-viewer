@@ -1,0 +1,36 @@
+.blankText {
+  margin-bottom: auto;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.blankText__container {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.blankText__container__dropdown {
+  font: 300 1.6rem overpass, sans-serif;
+  padding: 1rem 4rem 1rem 1rem;
+  margin: 1rem;
+  border: 2px var(--soft-mood) solid;
+  border-radius: 1rem;
+  background-color: transparent;
+  background-image: url(../assets/arrow.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  cursor: pointer;
+  outline: none;
+}
+
+.blankText__container__dropdown--selected {
+  background-color: var(--soft-mood);
+}

@@ -1,0 +1,169 @@
+.slider {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.slider__answer {
+  padding: 1rem 2rem;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: var(--soft-mood) 0 1.5rem 3rem -1rem;
+}
+
+.slider__point{
+  width: 0;
+	height: 0;
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	border-top: 12px solid white;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * CUSTOM SLIDER */
+
+input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  max-width: 300px;
+  margin-top: 3rem;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]::-moz-focus-outer {
+  border: 0;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * WEBKIT */
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 6px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: var(--mood);
+  border-radius: 3px;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: var(--mood);
+}
+
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: var(--soft-mood) 0 0.5rem 0 0;
+  height: 30px;
+  width: 30px;
+  border-radius: 15px;
+  background: white;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -12px;
+  transition: 1s;
+  transition-timing-function: cubic-bezier(0, 0.5, 0, 1);
+}
+
+input[type=range]::-webkit-slider-thumb:hover {
+  box-shadow: var(--softer-mood) 0 0 0 2rem;
+  transition: 1s;
+  transition-timing-function: cubic-bezier(0, 0.5, 0, 1);
+}
+
+input[type=range]::-webkit-slider-thumb:active {
+  box-shadow: var(--soft-mood) 0 0.1rem 0 0.1rem;
+  transition: 0.1s;
+  transition-timing-function: cubic-bezier(0, 0.5, 0, 1);
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * MOZILLA */
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 6px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: var(--mood);
+  border-radius: 3px;
+}
+
+input[type=range]::-moz-range-thumb {
+  box-shadow: var(--soft-mood) 0 0.5rem 0 0;
+  height: 30px;
+  width: 30px;
+  border: 0px;
+  border-radius: 15px;
+  background: white;
+  cursor: pointer;
+  transition: 1s;
+  transition-timing-function: cubic-bezier(0, 0.5, 0, 1);
+}
+
+input[type=range]::-moz-range-thumb:hover {
+  box-shadow: var(--softer-mood) 0 0 0 2rem;
+  transition: 1s;
+  transition-timing-function: cubic-bezier(0, 0.5, 0, 1);
+}
+
+input[type=range]::-moz-range-thumb:active {
+  box-shadow: var(--soft-mood) 0 0.1rem 0 0.1rem;
+  transition: 0.1s;
+  transition-timing-function: cubic-bezier(0, 0.5, 0, 1);
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * MICROSOFT */
+
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 6px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+input[type=range]::-ms-fill-lower {
+  background: var(--mood);
+  border-radius: 6px;
+}
+
+input[type=range]::-ms-fill-upper {
+  background: var(--mood);
+  border-radius: 6px;
+}
+
+input[type=range]::-ms-thumb {
+  margin-top: 1px;
+  box-shadow: var(--soft-mood) 0 0.5rem 0 0;
+  height: 30px;
+  width: 30px;
+  border-radius: 15px;
+  background: white;
+  cursor: pointer;
+  transition: 1s;
+  transition-timing-function: cubic-bezier(0, 0.5, 0, 1);
+}
+
+input[type=range]::-ms-thumb:hover {
+  box-shadow: var(--softer-mood) 0 0 0 2rem;
+  transition: 1s;
+  transition-timing-function: cubic-bezier(0, 0.5, 0, 1);
+}
+
+input[type=range]::-ms-thumb:active {
+  box-shadow: var(--soft-mood) 0 0.1rem 0 0.1rem;
+  transition: 0.1s;
+  transition-timing-function: cubic-bezier(0, 0.5, 0, 1);
+}
+
+input[type=range]:focus::-ms-fill-lower {
+  background: var(--mood);
+}
+
+input[type=range]:focus::-ms-fill-upper {
+  background: var(--mood);
+}
