@@ -1,0 +1,68 @@
+/* ANSWERS */
+
+.viewer__interaction__answers {
+  min-height: auto;
+  background-color: var(--softer-mood);
+  padding: 6rem;
+  box-shadow: var(--softer-mood) 0 1rem 0 0 inset;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  overflow: scroll;
+}
+
+.viewer__interaction__answers__instruction {
+  margin-top: auto;
+  margin-bottom: 2rem;
+  width: 100%;
+  text-align: center;
+}
+
+.viewer__interaction__answers__MAQ {
+  margin-bottom: auto;
+  display: grid;
+  grid-template-rows: auto;
+  grid-gap: 1rem;
+}
+
+.viewer__interaction__answers__MAQ__answer {
+  max-width: 800px;
+  padding: 1.5rem;
+  border: 2px var(--soft-mood) solid;
+  border-radius: 1rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 1.5rem;
+  align-items: center;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.viewer__interaction__answers__MAQ__answer:hover {
+  background-color: var(--softer-mood);
+  transition: 1s;
+  transition-timing-function: cubic-bezier(0, 0.5, 0, 1);
+}
+
+.viewer__interaction__answers__MAQ__answer:active {
+  background-color: var(--soft-mood);
+  transition: 0.1s;
+  transition-timing-function: cubic-bezier(0, 0.5, 0, 1);
+}
+
+.viewer__interaction__answers__MAQ__answer__button {
+  height: 2rem;
+  width: 2rem;
+  background-color: var(--soft-mood);
+  box-shadow: var(--soft-mood) 0 0.6rem 0 0 inset;
+  border-radius: 0.4rem;
+}
+
+.viewer__interaction__answers__MAQ__answer--selected {
+  background-color: var(--soft-mood);
+}
+
+.viewer__interaction__answers__MAQ__answer--selected .viewer__interaction__answers__MAQ__answer__button {
+  /*background-image: url(./assets/checked.svg);*/
+  box-shadow: none;
+}

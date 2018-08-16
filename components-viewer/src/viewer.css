@@ -1,0 +1,10 @@
+.viewer {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  padding: 3rem;
+  grid-gap: 3rem;
+  box-sizing: border-box;
+}

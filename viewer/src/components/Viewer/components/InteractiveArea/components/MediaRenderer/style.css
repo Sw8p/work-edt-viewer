@@ -1,0 +1,19 @@
+/* PICTURES & VIDEOS */
+
+.viewer__main__visual {
+  display: block;
+  padding: 0;
+  margin: 3em 0 3em 3em;
+}
+
+.viewer__main__visual img {
+  max-width: 40vw;
+  max-height: 80vh;
+  border-radius: 1em;
+}
+
+.viewer__main__visual video {
+  max-width: 40vw;
+  max-height: 80vh;
+  border-radius: 1em;
+}

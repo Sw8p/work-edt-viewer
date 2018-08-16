@@ -1,0 +1,47 @@
+.viewer__main {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+}
+
+/* INTERACTION ZONE DIPLAY */
+
+.viewer__main__interaction {
+  padding: 2em 3em 0 0;
+  margin-left: 3rem;
+  max-width: 800px;
+  height: 80vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.viewer__main__interaction__content h2{
+  font-size: 2.4rem;
+}
+
+/* WHAT TO DO */
+
+.viewer__main__interaction__answers {
+  /* max-height: 60vh; */
+  background-color: var(--softer-mood);
+  border-radius: 2rem;
+  padding: 2em;
+  margin: 1rem 0 3rem 0;
+  box-shadow:  var(--softer-mood) 0 0.5rem 0 0 inset;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-gap: 1rem;
+  overflow: hidden;
+}
+
+.viewer__main__interaction__answers:hover {
+    overflow-y: scroll;
+}
+
+/* "VALIDER" BUTTON */
+
+.viewer__main__interaction__nav {
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-end;
+}

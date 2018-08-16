@@ -1,0 +1,92 @@
+:root {
+  --great: #29CC61;
+  --strong-great: rgba(41, 204, 97, 0.6);
+  --soft-great: rgba(41, 204, 97, 0.3);
+
+  --good: #8FCC29;
+
+  --mediocre: #EDC50B;
+
+  --bad: #FF8300;
+  --hover-bad: #FF9300;
+  --active-bad: #FF7300;
+  --soft-bad: rgba(255, 131, 0, 0.3);
+  --softer-bad: rgba(255, 131, 0, 0.1);
+
+  --terrible: #FF5438;
+  --soft-terrible: rgba(255, 84, 56, 0.3);
+
+  --mood: #FF75AC;
+  --soft-mood: rgba(255, 117, 172, 0.3);
+  --softer-mood: rgba(255, 117, 172, 0.1);
+  --softest-mood: rgba(255, 117, 172, 0.05);
+  --invisible-mood: rgba(255, 117, 172, 0);
+
+  --background: #FCF4FA;
+  --soft-background: rgba(252, 244, 250, 0.5);
+
+  --info: #5C70FF;
+  --strong-info: rgba(92, 112, 255, 0.6);
+  --soft-info: rgba(92, 112, 255, 0.3);
+  --softer-info: rgba(92, 112, 255, 0.1);
+  --softest-info: rgba(92, 112, 255, 0.05);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  appearance: none;
+  opacity: 1;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  background-color: var(--background);
+}
+
+p {
+  font: 300 1.6rem overpass, sans-serif;
+}
+
+strong {
+  font-weight: 800;
+}
+
+h1 {
+    font-family: overpass, sans-serif;
+  color: var(--mood);
+  font-weight: 800;
+  font-size: 4rem;
+}
+
+h2 {
+    font-family: overpass, sans-serif;
+  font-weight: 800;
+  font-size: 2rem;
+}
+
+h3 {
+  /* color depends on test results (it's the title of the bubble) */
+      font-family: overpass, sans-serif;
+  font-weight: 800;
+  font-size: 2rem;
+}
+
+h4 {
+  /* color depends on category (conaissance, comportement, etc.) */
+      font-family: overpass, sans-serif;
+  font-weight: 800;
+  font-size: 2rem;
+}
+
+button {
+    outline: 0;
+}
+
+.info {
+  color: var(--info);
+}

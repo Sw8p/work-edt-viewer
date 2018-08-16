@@ -1,0 +1,46 @@
+.viewer__interaction__header {
+  background-color: white;
+  padding: 2rem 2rem 0 2rem;
+  border-radius: 2rem 2rem 0 0;
+  justify-content: center;
+  text-align: center;
+}
+
+.viewer__interaction__header h2{
+  font-size: 2.4rem;
+}
+
+.viewer__interaction__header__number {
+  font-size: 1.6rem;
+  color: var(--info);
+  margin-bottom: 0.5rem;
+}
+
+.viewer__interaction__header__time {
+  width: 83%;
+  height: 6px;
+  margin-top: 3rem;
+  margin-left: -2rem;
+  margin-right: -2rem;
+  background-color: var(--great);
+  border-radius: 0 3px 3px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: none;
+  transition: 1s;
+  transition-timing-function: cubic-bezier(0, 0, 1, 1);
+}
+
+.viewer__interaction__header__time__bubble {
+  background-color: var(--great);
+  padding: 0.6rem 1.2rem;
+  border-radius: 2rem;
+  margin-left: -1.5rem;
+  box-shadow: var(--softer-mood) 0 1rem 0 0;
+  z-index: 1;
+}
+
+.viewer__interaction__header__time__bubble p {
+  font-weight: 800;
+}

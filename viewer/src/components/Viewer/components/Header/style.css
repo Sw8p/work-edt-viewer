@@ -1,0 +1,42 @@
+.viewer__header {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  box-sizing: border-box;
+}
+
+.viewer__header__number {
+  width: 100%;
+  background-color: var(--strong-great);
+  box-sizing: border-box;
+  text-align: right;
+}
+
+.viewer__header__number__gauge {
+  /* width: 35%; */
+  height: 100%;
+  background-color: var(--great);
+  float: left;
+}
+
+.viewer__header__number__text {
+  margin: 1rem 2rem;
+  color: white;
+}
+
+.viewer__header__time {
+  width: 100%;
+  background-color: var(--strong-info);
+  box-sizing: border-box;
+}
+
+.viewer__header__time__gauge {
+  height: 100%;
+  background-color: var(--info);
+  float: right;
+}
+
+.viewer__header__time__text {
+  margin: 1rem 2rem;
+  color: white;
+}

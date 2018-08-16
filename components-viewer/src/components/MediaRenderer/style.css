@@ -1,0 +1,18 @@
+/* PICTURES & VIDEOS */
+
+.viewer__visual {
+  display: block;
+  padding: 0;
+}
+
+.viewer__visual img {
+  max-width: 40vw;
+  max-height: calc(100vh - 6rem);
+  border-radius: 1em;
+}
+
+.viewer__visual video {
+  max-width: calc(40vw - 3rem);
+  max-height: calc(100vh - 6rem);
+  border-radius: 1em;
+}
