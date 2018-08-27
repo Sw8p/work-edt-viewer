@@ -17,7 +17,8 @@
 }
 
 .viewer__interaction__header__time {
-  width: 83%;
+  //width: calc(100% + 4rem);
+  width: 5.8rem;
   height: 6px;
   margin-top: 3rem;
   margin-left: -2rem;
@@ -33,14 +34,16 @@
 }
 
 .viewer__interaction__header__time__bubble {
+  width: 5rem;
   background-color: var(--great);
   padding: 0.6rem 1.2rem;
   border-radius: 2rem;
-  margin-left: -1.5rem;
+  margin-right: -3rem;
   box-shadow: var(--softer-mood) 0 1rem 0 0;
   z-index: 1;
 }
 
 .viewer__interaction__header__time__bubble p {
   font-weight: 800;
+  white-space: nowrap;
 }

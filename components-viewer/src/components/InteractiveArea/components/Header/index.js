@@ -5,9 +5,17 @@ import { printDuration } from './utils';
 import './style.css'
 
 export class Header extends React.Component {
+  renderWidthGauge = () => {
+    const { remainingSeconds, duration } = this.props;
+    /* duration = durée quiz
+    remainingSeconds = temps restant */
+    const progression = remainingSeconds / duration * 100;
+
+    return (100 - progression);
+  }
+
   renderDurationGauge = () => {
-      const { remainingSeconds, duration } = this.props;
-      const progression = remainingSeconds / duration * 100;
+      const { remainingSeconds } = this.props;
 
       return (
         printDuration(remainingSeconds * 1000)
@@ -17,6 +25,7 @@ export class Header extends React.Component {
   render() {
     const { questionIndex, questionCount, label } = this.props;
     const questionProgression = (questionIndex + 1) / questionCount * 100;
+    console.log(this.renderDurationGauge());
 
     return (
       <div className="viewer__interaction__header">
@@ -28,7 +37,7 @@ export class Header extends React.Component {
           <h2>
               {label}
           </h2>
-          <div className="viewer__interaction__header__time">
+          <div className="viewer__interaction__header__time" style={{width: this.renderWidthGauge()+'%'}}>
             <span className="viewer__interaction__header__time__bubble">
               <p>{this.renderDurationGauge()}</p>
             </span>

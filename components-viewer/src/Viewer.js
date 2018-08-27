@@ -1,21 +1,25 @@
 import React, { Component } from 'react';
+/*........................route & redux........................*/
 
 import { MediaRenderer } from './components/MediaRenderer'
 import { InteractiveArea } from './components/InteractiveArea'
+/*........................POPUP........................*/
 
 import selectors from './selectors'
+/*........................ACTIONS........................*/
 
 import './viewer.css'
 
 class Viewer extends Component {
   state = {
     remainingSeconds: this.props.exam.duration,
-    questionIndex: 4
+    questionIndex: 0
   }
 
 
   //Timer & check
   componentDidMount() {
+    /*........................ROUTE - questionIndex........................*/
     const { questionIndex } = this.state;
 
     if (questionIndex === 0) {
@@ -36,11 +40,13 @@ class Viewer extends Component {
     if (this.state.remainingSeconds === 0) {
         clearInterval(this.timer);
 
+        /*........................POPUP........................*/
         alert("Game over...");
     }
   }
 
   handleValidateAnswer = () => {
+    /*........................ROUTE........................*/
     const { exam } = this.props;
     const currentIndex = this.state.questionIndex;
     const maxIndex = exam.content.length - 1;
@@ -48,6 +54,7 @@ class Viewer extends Component {
     const nextIndex = currentIndex + 1;
 
     if (nextIndex > maxIndex) {
+      /*........................RESULT........................*/
         return alert("End exam !")
     }
 
@@ -57,15 +64,20 @@ class Viewer extends Component {
   }
 
   render() {
+    /*........................ROUTE........................*/
     const { exam } = this.props;
     const { questionIndex } = this.state;
     const currentQuestion = selectors.getQuestionContent(this.props, questionIndex);
-    let mediaRenderer;
+    let mediaRenderer = null;
     if(currentQuestion.media){
       mediaRenderer = <MediaRenderer
           media={currentQuestion.media}
       />
     }
+    /*........................ return
+    Media
+    InteractiveArea
+    ........................*/
     return (
       <div className="viewer">
           {mediaRenderer}
