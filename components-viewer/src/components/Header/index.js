@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 import { printDuration } from './utils';
 
-import './style.css'
+import './style.css';
 
 export class Header extends React.Component {
   renderWidthGauge = () => {
@@ -45,3 +46,10 @@ export class Header extends React.Component {
     )
   }
 }
+
+Header.propTypes = {
+    duration: PropTypes.number.isRequired,
+    remainingSeconds: PropTypes.number.isRequired,
+    questionIndex: PropTypes.number.isRequired,
+    questionCount: PropTypes.number.isRequired
+};

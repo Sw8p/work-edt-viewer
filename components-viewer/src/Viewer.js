@@ -1,28 +1,50 @@
 import React, { Component } from 'react';
-/*........................route & redux........................*/
+//import { connect } from 'react-redux';
+//import { routeNode } from 'react-router5';
 
 import { MediaRenderer } from './components/MediaRenderer'
+import { Header } from './components/Header'
 import { InteractiveArea } from './components/InteractiveArea'
-/*........................POPUP........................*/
+//import { PopupTimeElapsed } from './components/PopupTimeElapsed';
 
 import selectors from './selectors'
-/*........................ACTIONS........................*/
+//import selectors from 'selectors';
+//import actions from 'actions';
 
 import './viewer.css'
+//import './style.css'
 
 class Viewer extends Component {
   state = {
+    started: false,
     remainingSeconds: this.props.exam.duration,
     questionIndex: 0
   }
 
-
-  //Timer & check
-  componentDidMount() {
-    /*........................ROUTE - questionIndex........................*/
+  /*componentDidMount() {
+    const { started } = this.state;
+    //const { route, exam, startReqStatus, startExam } = this.props;
     const { questionIndex } = this.state;
+    //const { questionIndex } = route.params;
 
-    if (questionIndex === 0) {
+    if (questionIndex === 0 && !started) {
+      //startExam({ id: exam._id });
+    }
+  }*/
+
+  componentDidMount() {
+  //componentDidUpdate() {
+    const { started } = this.state;
+    //const { route, startReqStatus } = this.props;
+    const { questionIndex } = this.state;
+    //const { questionIndex } = route.params;
+
+    if (
+        !started &&
+        questionIndex === 0 /*&&
+        !startReqStatus.pending &&
+        startReqStatus.success*/
+    ) {
         this.timer = setInterval(() => {
             this.setState(
                 ({ remainingSeconds }) => ({
@@ -31,16 +53,27 @@ class Viewer extends Component {
                 this.checkElapsedTime
             );
         }, 1000);
+
+        this.setState({ started: true });
     }
   }
+
   componentWillUnmount(){
     clearInterval(this.timer);
   }
+
   checkElapsedTime = () => {
     if (this.state.remainingSeconds === 0) {
         clearInterval(this.timer);
 
         /*........................POPUP........................*/
+        //this.props.showPopup({
+        //    name: 'CardPopup',
+        //    cancelable: false,
+        //    props: {
+        //        component: PopupTimeElapsed
+        //    }
+        //});
         alert("Game over...");
     }
   }
@@ -75,22 +108,24 @@ class Viewer extends Component {
     //      media={currentQuestion.media}
     //  />
     //}
-    /*........................ return
-    Media
-    Header
-    InteractiveArea
-    ........................*/
+
     return (
       <div className="viewer">
           {media && <MediaRenderer media={media} />}
-          <InteractiveArea
-              question={currentQuestion}
-              validateAnswer={this.handleValidateAnswer}
+          <div className="viewer__interaction">
+            <Header
               duration={exam.duration}
               remainingSeconds={this.state.remainingSeconds}
               questionIndex={questionIndex}
-              questionCount={exam.content.length}
-          />
+              questionCount={exam.content.lenght}
+              label={currentQuestion.label}
+            />
+
+            <InteractiveArea
+              question={currentQuestion}
+              validateAnswer={this.handleValidateAnswer}
+            />
+          </div>
       </div>
     );
   }
