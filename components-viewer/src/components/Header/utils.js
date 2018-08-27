@@ -11,7 +11,6 @@ export function printDuration(duration) {
                 ms: ''
             }
         },
-        //delimiter: '\u00A0',
         delimiter: ' : ',
         spacer: ''
     });
