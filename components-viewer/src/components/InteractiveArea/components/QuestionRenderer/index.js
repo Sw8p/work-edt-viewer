@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 
 import { BlankText } from './components/BlankText';
 import { Maq } from './components/Maq';
@@ -30,58 +31,21 @@ export class QuestionRenderer extends React.Component {
         }
   };
 
-  getInstruction = () => {
-    const { question } = this.props;
-
-    switch (question.type) {
-        case 'blanktext':
-            return (
-              <React.Fragment>
-                Choisir les mots manquants du texte à trous
-              </React.Fragment>
-            );
-        case 'maq':
-            return (
-              <React.Fragment>
-                  Sélectionner <strong>la ou les</strong> bonne(s) réponse(s)
-              </React.Fragment>
-            );
-        case 'saq':
-            return (
-              <React.Fragment>
-                  Sélectionner <strong>la</strong> bonne réponse
-              </React.Fragment>
-            );
-        case 'signsort':
-            return (
-              <React.Fragment>
-                  Sélectionner <strong>la ou les</strong> bonne(s) réponse(s)
-              </React.Fragment>
-            );
-        case 'slider':
-            return (
-              <React.Fragment>
-                Déplacer le curseur
-              </React.Fragment>
-            );
-        default:
-            return ;
-    }
-  }
-
-
   render(){
     const { question } = this.props;
     const QuestionComponent = this.getQuestionComponent();
-    const instruction = this.getInstruction();
 
     return (
       <div className="viewer__interaction__answers">
         <p className="info viewer__interaction__answers__instruction">
-          {instruction}
+          {QuestionComponent.instruction}
         </p>
         <QuestionComponent data={question.values}/>
       </div>
     )
   }
 }
+
+QuestionRenderer.propTypes = {
+    question: PropTypes.object.isRequired
+};

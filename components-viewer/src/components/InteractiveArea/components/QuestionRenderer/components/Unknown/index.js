@@ -10,9 +10,7 @@ export class Unknown extends React.Component {
 }
 
 Unknown.instruction = (
-  <React.Fragment>
-    Oops lol
-  </React.Fragment>
+  <span>unknown...</span>
 );
 
 Unknown.propTypes = {};

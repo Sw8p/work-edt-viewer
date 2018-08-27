@@ -25,7 +25,6 @@ export class Header extends React.Component {
   render() {
     const { questionIndex, questionCount, label } = this.props;
     const questionProgression = (questionIndex + 1) / questionCount * 100;
-    console.log(this.renderDurationGauge());
 
     return (
       <div className="viewer__interaction__header">

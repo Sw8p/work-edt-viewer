@@ -10,8 +10,7 @@ export class MediaRenderer extends React.Component {
     const { media } = this.props
     return (
       <div className="viewer__visual">
-        <h1>MediaRenderer</h1>
-        <p>src media : {media}</p>
+        <p><em>src media : {media}</em></p>
         <video src={src} controls autoPlay muted>
             <p>
                 Votre navigateur web ne permet pas d‘afficher la

@@ -19,6 +19,11 @@ export class SignSort extends React.Component {
     }
 }
 
+SignSort.instruction = (
+    <span>
+        Sélectionner <strong>la ou les</strong> bonne(s) réponse(s)
+    </span>
+);
 
 SignSort.propTypes = {
     data: PropTypes.object.isRequired

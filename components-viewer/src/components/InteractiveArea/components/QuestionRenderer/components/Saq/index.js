@@ -8,7 +8,6 @@ export class Saq extends React.Component {
       const { data } = this.props
         return (
           <div className="SAQ">
-            <h4>CECI EST UNE QUESTION A REPONSE UNIQUE</h4>
             {data.map((value, k) => (
               <div className="SAQ__answer" key={k}>
                 <span className="SAQ__answer__button"></span>
@@ -19,6 +18,12 @@ export class Saq extends React.Component {
         );
     }
 }
+
+Saq.instruction = (
+    <span>
+        Sélectionner <strong>la</strong> bonne réponse
+    </span>
+);
 
 Saq.propTypes = {
     data: PropTypes.object.isRequired

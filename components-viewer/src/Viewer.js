@@ -68,19 +68,21 @@ class Viewer extends Component {
     const { exam } = this.props;
     const { questionIndex } = this.state;
     const currentQuestion = selectors.getQuestionContent(this.props, questionIndex);
-    let mediaRenderer = null;
-    if(currentQuestion.media){
-      mediaRenderer = <MediaRenderer
-          media={currentQuestion.media}
-      />
-    }
+    const media = currentQuestion.media;
+    //let mediaRenderer = null;
+    //if(currentQuestion.media){
+    //  mediaRenderer = <MediaRenderer
+    //      media={currentQuestion.media}
+    //  />
+    //}
     /*........................ return
     Media
+    Header
     InteractiveArea
     ........................*/
     return (
       <div className="viewer">
-          {mediaRenderer}
+          {media && <MediaRenderer media={media} />}
           <InteractiveArea
               question={currentQuestion}
               validateAnswer={this.handleValidateAnswer}

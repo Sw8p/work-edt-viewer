@@ -19,6 +19,7 @@ export class Slider extends React.Component {
     }
 }
 
+Slider.instruction = <span>Déplacer le curseur</span>;
 
 Slider.propTypes = {
     data: PropTypes.object.isRequired
